@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+A passionate UI/UX developer with an eye for accessibility and aesthetics.
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+UI/UX - Comp Sci/Graphic Design
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[lillerbun@gmail.com](lillerbun@gmail.com)
