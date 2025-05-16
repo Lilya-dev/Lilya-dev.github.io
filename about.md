@@ -6,7 +6,7 @@ permalink: /about/
 
 I'm a UI/UX developer with an eye for accessibility, efficient code and aesthetics.
 
-- BCompSc UX Major QUT
+- BCompSc UX Major [QUT](https://www.qut.edu.au/)
 
 ### Contact me
 
