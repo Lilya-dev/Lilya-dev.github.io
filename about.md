@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-A passionate UI/UX developer with an eye for accessibility and aesthetics.
+I'm a UI/UX developer with an eye for accessibility, efficient code and aesthetics.
 
 ### More Information
 
