@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Contact
+permalink: /contact/
 ---
 
 I'm a UI/UX developer with an eye for accessibility, efficient code and aesthetics.
