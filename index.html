@@ -5,8 +5,8 @@
   <title>Lilya Portfolio</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   
-  <!-- Favicon Link -->
-  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Favicon Link (Updated to images folder) -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
   
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 
@@ -46,7 +46,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      /* Padding is now symmetrical (same on top/bottom as left/right) */
       padding: clamp(16px, 2vw, 32px) !important; 
     }
 
@@ -61,14 +60,12 @@
       padding: clamp(8px, 1vw, 16px) clamp(16px, 1.5vw, 32px) !important;
     }
 
-    /* Spacing between the Art and UX buttons */
     .header-buttons {
       display: flex;
       gap: clamp(8px, 1vw, 16px);
     }
-    /* ----------------------- */
 
-    /* Gallery Grid Styles (For Art Page) */
+    /* --- Art Gallery Grid --- */
     .image-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -76,20 +73,42 @@
       padding: 4px;
     }
 
-    .image-grid img {
+    /* Wrapper for each Art image + text */
+    .art-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .art-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    /* UX Page specific styles */
+    /* Caption styles for both Art and UX */
+    .caption {
+      font-size: 12px;
+      color: #888; /* Light grey */
+      text-align: right; /* Anchored right */
+      margin: 4px 0 0 0; /* Minimal padding above */
+      padding: 0 4px 4px 0; /* slight right padding so it aligns neatly */
+    }
+
+    /* --- UX Page specific styles --- */
     .ux-block {
       padding: clamp(16px, 2vw, 48px);
       max-width: 1200px; 
       margin: 0 auto;
     }
     
+    /* Container for the text above the images */
+    .ux-text-header {
+      max-width: 800px;
+      margin: 0 auto 8px auto; /* Centers container, minimal bottom margin */
+      text-align: right; /* Anchors text to the right */
+    }
+
     .ux-image-row {
       display: flex;
       gap: 8px;
@@ -101,7 +120,10 @@
 
     .ux-image-container {
       width: 50%;
-      aspect-ratio: 1 / 1; 
+      /* Changed to 16:9 for flat rectangles prioritizing horizontal info */
+      aspect-ratio: 16 / 9; 
+      display: flex;
+      flex-direction: column;
     }
 
     .ux-image-container img {
@@ -122,17 +144,12 @@
 
   <!-- Navigation Bar -->
   <div class="w3-bar w3-light-grey responsive-header">
-    
-    <!-- Brand name (Left) -->
     <a class="responsive-text">Lilya Portfolio</a>
     
-    <!-- Buttons (Right, Art then UX) -->
     <div class="header-buttons">
-      <!-- Note: href points to #home so Art acts as the default state -->
       <a href="#home" class="w3-button btn-art responsive-button">Art</a>
       <a href="#ux" class="w3-button btn-ux responsive-button">UX</a>
     </div>
-    
   </div>
 
   <!-- UX Page -->
@@ -140,27 +157,52 @@
     
     <!-- Row 1: ux7 & ux2 -->
     <div class="w3-margin-bottom">
-      <p>Placeholder text paragraph above ux7 and ux2. Replace this with your actual project description or details.</p>
+      <!-- Anchored right above the images -->
+      <div class="ux-text-header">
+        <p style="margin: 0;">Placeholder text paragraph above ux7 and ux2. Replace this with your actual project description or details.</p>
+      </div>
+      
       <div class="ux-image-row">
-        <div class="ux-image-container"><img src="images/ux7.png" alt="UX Project 7"></div>
-        <div class="ux-image-container"><img src="images/ux2.png" alt="UX Project 2"></div>
+        <div class="ux-image-container">
+          <img src="images/ux7.png" alt="UX Project 7">
+          <p class="caption">UX Project 7</p>
+        </div>
+        <div class="ux-image-container">
+          <img src="images/ux2.png" alt="UX Project 2">
+          <p class="caption">UX Project 2</p>
+        </div>
       </div>
     </div>
 
     <!-- Row 2: ux3 & ux4 -->
     <div class="w3-margin-bottom">
       <div class="ux-image-row">
-        <div class="ux-image-container"><img src="images/ux3.png" alt="UX Project 3"></div>
-        <div class="ux-image-container"><img src="images/ux4.png" alt="UX Project 4"></div>
+        <div class="ux-image-container">
+          <img src="images/ux3.png" alt="UX Project 3">
+          <p class="caption">UX Project 3</p>
+        </div>
+        <div class="ux-image-container">
+          <img src="images/ux4.png" alt="UX Project 4">
+          <p class="caption">UX Project 4</p>
+        </div>
       </div>
     </div>
 
     <!-- Row 3: ux8 & ux9 -->
     <div class="w3-margin-bottom">
-      <p>Placeholder text paragraph above ux8 and ux9. Replace this with your actual project description or details.</p>
+      <div class="ux-text-header">
+        <p style="margin: 0;">Placeholder text paragraph above ux8 and ux9. Replace this with your actual project description or details.</p>
+      </div>
+      
       <div class="ux-image-row">
-        <div class="ux-image-container"><img src="images/ux8.png" alt="UX Project 8"></div>
-        <div class="ux-image-container"><img src="images/ux9.png" alt="UX Project 9"></div>
+        <div class="ux-image-container">
+          <img src="images/ux8.png" alt="UX Project 8">
+          <p class="caption">UX Project 8</p>
+        </div>
+        <div class="ux-image-container">
+          <img src="images/ux9.png" alt="UX Project 9">
+          <p class="caption">UX Project 9</p>
+        </div>
       </div>
     </div>
 
@@ -169,24 +211,97 @@
   <!-- Art Page -->
   <div class="page page-art">
     <div class="image-grid">
-      <img src="images/art01.png" alt="Art Piece 1">
-      <img src="images/art02.jpg" alt="Art Piece 2">
-      <img src="images/art03.jpg" alt="Art Piece 3">
-      <img src="images/art04.jpg" alt="Art Piece 4">
-      <img src="images/art05.png" alt="Art Piece 5">
-      <img src="images/art07.jpg" alt="Art Piece 7">
-      <img src="images/art08.jpg" alt="Art Piece 8">
-      <img src="images/art09.jpg" alt="Art Piece 9">
-      <img src="images/art10.jpg" alt="Art Piece 10">
-      <img src="images/art11.png" alt="Art Piece 11">
-      <img src="images/art12.png" alt="Art Piece 12">
-      <img src="images/art13.jpg" alt="Art Piece 13">
-      <img src="images/art14.jpg" alt="Art Piece 14">
-      <img src="images/art15.jpg" alt="Art Piece 15">
-      <img src="images/art16.png" alt="Art Piece 16">
-      <img src="images/art17.png" alt="Art Piece 17">
-      <img src="images/art18.jpg" alt="Art Piece 18">
-      <img src="images/art20.jpg" alt="Art Piece 20">
+      
+      <div class="art-item">
+        <img src="images/art01.png" alt="Art Piece 1">
+        <p class="caption">Art Piece 1</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art02.jpg" alt="Art Piece 2">
+        <p class="caption">Art Piece 2</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art03.jpg" alt="Art Piece 3">
+        <p class="caption">Art Piece 3</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art04.jpg" alt="Art Piece 4">
+        <p class="caption">Art Piece 4</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art05.png" alt="Art Piece 5">
+        <p class="caption">Art Piece 5</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art07.jpg" alt="Art Piece 7">
+        <p class="caption">Art Piece 7</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art08.jpg" alt="Art Piece 8">
+        <p class="caption">Art Piece 8</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art09.jpg" alt="Art Piece 9">
+        <p class="caption">Art Piece 9</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art10.jpg" alt="Art Piece 10">
+        <p class="caption">Art Piece 10</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art11.png" alt="Art Piece 11">
+        <p class="caption">Art Piece 11</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art12.png" alt="Art Piece 12">
+        <p class="caption">Art Piece 12</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art13.jpg" alt="Art Piece 13">
+        <p class="caption">Art Piece 13</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art14.jpg" alt="Art Piece 14">
+        <p class="caption">Art Piece 14</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art15.jpg" alt="Art Piece 15">
+        <p class="caption">Art Piece 15</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art16.png" alt="Art Piece 16">
+        <p class="caption">Art Piece 16</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art17.png" alt="Art Piece 17">
+        <p class="caption">Art Piece 17</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art18.jpg" alt="Art Piece 18">
+        <p class="caption">Art Piece 18</p>
+      </div>
+      
+      <div class="art-item">
+        <img src="images/art20.jpg" alt="Art Piece 20">
+        <p class="caption">Art Piece 20</p>
+      </div>
+
     </div>
   </div>
 
