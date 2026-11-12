@@ -29,49 +29,62 @@
       display: none;
     }
 
-    /* Active Button Styling (No bolding, just background color) */
-    #ux:target ~ .w3-bar .btn-ux {
+    /* Active Button Styling */
+    #ux:target ~ .header-bar .btn-ux {
       background-color: #ccc !important;
       color: #000 !important;
     }
 
-    #home:target ~ .w3-bar .btn-art,
-    #art:target ~ .w3-bar .btn-art {
+    #home:target ~ .header-bar .btn-art,
+    #art:target ~ .header-bar .btn-art {
       background-color: #ccc !important;
       color: #000 !important;
     }
 
-    /* --- Split Header Layout --- */
-    .split-header {
+    /* --- Single Flexbox Header (Zero Whitespace) --- */
+    .header-bar {
       display: flex;
       justify-content: space-between;
-      /* Tiny padding to keep it tight to the edges */
-      padding: 4px 8px !important; 
+      align-items: stretch; /* Makes buttons stretch to full height */
+      background-color: #f1f1f1; /* Light grey background */
       width: 100%;
+      padding: 0; /* No outer padding */
+      margin: 0;  /* No outer margin */
     }
 
-    .header-left {
+    .header-brand {
+      font-size: clamp(18px, 1.5vw, 28px);
+      color: #000;
+      text-decoration: none;
       display: flex;
-      justify-content: flex-start; /* Aligns text to the left edge */
       align-items: center;
-    }
-
-    .header-right {
-      display: flex;
-      justify-content: flex-end; /* Aligns buttons to the right edge */
-      align-items: center;
-      gap: 8px;
-    }
-
-    .responsive-text {
-      font-size: clamp(18px, 1.5vw, 28px) !important;
+      /* Minimal left padding so text isn't visually chopped, 
+         but 0 margin so the box hits the edge */
+      padding-left: 12px; 
       margin: 0;
-      padding: 0;
     }
 
-    .responsive-button {
-      font-size: clamp(16px, 1.5vw, 28px) !important;
-      padding: clamp(8px, 1vw, 16px) clamp(16px, 1.5vw, 32px) !important;
+    .header-buttons {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .header-buttons a {
+      font-size: clamp(16px, 1.5vw, 28px);
+      background-color: transparent;
+      border: none;
+      color: #000;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      /* Button internal padding for clickable area */
+      padding: clamp(12px, 1.5vw, 20px) clamp(16px, 2vw, 32px);
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .header-buttons a:hover {
+      background-color: #ddd;
     }
     /* ----------------------- */
 
@@ -95,11 +108,11 @@
       display: block;
     }
 
-    /* Caption styles for both Art and UX */
+    /* Caption styles */
     .caption {
       font-size: 12px;
-      color: #888; /* Light grey */
-      text-align: left; /* Anchored to the left */
+      color: #888;
+      text-align: left;
       margin: 4px 0 0 0; 
       padding: 0 0 0 4px; 
     }
@@ -149,18 +162,16 @@
   <span id="ux"></span>
   <span id="art"></span>
 
-  <!-- Split Navigation Bar -->
-  <div class="w3-bar w3-light-grey split-header">
+  <!-- Zero-Whitespace Header -->
+  <div class="header-bar">
     
-    <!-- Left Half -->
-    <div class="header-left">
-      <a class="responsive-text">Lilya Portfolio</a>
-    </div>
+    <!-- Text on the Left -->
+    <a href="#home" class="header-brand">Lilya Portfolio</a>
     
-    <!-- Right Half -->
-    <div class="header-right">
-      <a href="#home" class="w3-button btn-art responsive-button">Art</a>
-      <a href="#ux" class="w3-button btn-ux responsive-button">UX</a>
+    <!-- Buttons on the Right -->
+    <div class="header-buttons">
+      <a href="#home" class="btn-art">Art</a>
+      <a href="#ux" class="btn-ux">UX</a>
     </div>
 
   </div>
