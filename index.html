@@ -5,16 +5,9 @@
   <title>Lilya Portfolio</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Lilya Portfolio</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 
   <style>
-    /* Hide both pages by default */
+    /* Page Toggling Logic */
     .page {
       display: none;
     }
@@ -24,7 +17,7 @@
       display: block;
     }
 
-    /* When #art is targeted: hide UX, show Art */
+    /* #art targeted: hide UX, show Art */
     #art:target ~ .page-ux {
       display: none;
     }
@@ -32,12 +25,28 @@
       display: block;
     }
 
-    /* When #ux is targeted: show UX, hide Art */
+    /* #ux targeted: show UX, hide Art */
     #ux:target ~ .page-ux {
       display: block;
     }
     #ux:target ~ .page-art {
       display: none;
+    }
+
+    /* Gallery Grid Styles */
+    .image-grid {
+      display: grid;
+      /* This creates responsive columns that are at least 300px wide */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 4px; /* The spacing between images. Set to 0 for a seamless tile. */
+      padding: 4px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures images fill their grid cells without stretching */
+      display: block;
     }
   </style>
 </head>
@@ -48,27 +57,36 @@
   <span id="ux"></span>
   <span id="art"></span>
 
+  <!-- Navigation Bar -->
   <div class="w3-bar w3-light-grey">
     <a class="w3-bar-item w3-margin">Lilya Portfolio</a>
     <a href="#ux"  class="w3-bar-item w3-margin w3-right w3-button">UX</a>
     <a href="#art" class="w3-bar-item w3-margin w3-right w3-button">Art</a>
   </div>
 
-  <!-- UX page -->
+  <!-- UX Page -->
   <div class="page page-ux">
-    <div class="w3-bar">
-      <div class="w3-display-container">
-        <img src="ux.png" class="w3-image" alt="UX portfolio">
-      </div>
+    <div class="image-grid">
+      <!-- Replace these with your actual UX image filenames -->
+      <img src="ux1.png" alt="UX Project 1">
+      <img src="ux2.png" alt="UX Project 2">
+      <img src="ux3.png" alt="UX Project 3">
+      <img src="ux4.png" alt="UX Project 4">
     </div>
   </div>
 
-  <!-- Art page -->
+  <!-- Art Page -->
   <div class="page page-art">
-    <div class="w3-bar">
-      <div class="w3-display-container">
-        <img src="portfolio_canvas.png" class="w3-image" alt="Art portfolio">
-      </div>
+    <div class="image-grid">
+      <!-- Replace these with your actual Art image filenames -->
+      <img src="art1.png" alt="Art Piece 1">
+      <img src="art2.png" alt="Art Piece 2">
+      <img src="art3.png" alt="Art Piece 3">
+      <img src="art4.png" alt="Art Piece 4">
+      <img src="art5.png" alt="Art Piece 5">
+      <img src="art6.png" alt="Art Piece 6">
+      <img src="art7.png" alt="Art Piece 7">
+      <img src="art8.png" alt="Art Piece 8">
     </div>
   </div>
 
