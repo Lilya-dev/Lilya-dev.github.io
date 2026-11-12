@@ -60,11 +60,18 @@
       padding: 16px;
     }
     
-    .ux-block img {
-      width: 100%;
-      height: auto;
+    /* Flex container to make images side-by-side and clamp height */
+    .ux-image-row {
+      display: flex;
+      gap: 8px; /* Space between the two images */
+      margin-bottom: 24px;
+    }
+
+    .ux-image-row img {
+      width: 50%; /* Each image takes half the row */
+      height: 400px; /* Dictates the clamped vertical space. Adjust this number as needed! */
+      object-fit: cover; /* Crops the taller image to fit the height without stretching */
       display: block;
-      padding: 4px; /* Keeps a slight gap between the images */
     }
   </style>
 </head>
@@ -80,42 +87,36 @@
   <div class="w3-bar w3-light-grey">
     <a class="w3-bar-item w3-margin" style="padding: 8px 16px;">Lilya Portfolio</a>
     
-    <!-- Art is first (left), UX is second (right) -->
-    <a href="#home" class="w3-bar-item w3-right w3-margin w3-button btn-art">Art</a>
+    <!-- To get Art on the left and UX on the right, UX must be FIRST in the code when floating right -->
     <a href="#ux" class="w3-bar-item w3-right w3-margin w3-button btn-ux">UX</a>
+    <a href="#home" class="w3-bar-item w3-right w3-margin w3-button btn-art">Art</a>
   </div>
 
   <!-- UX Page -->
   <div class="page page-ux ux-block">
     
     <!-- Row 1: ux7 & ux2 -->
-    <div class="w3-row-padding w3-margin-bottom">
-      <p style="padding: 0 8px;">Placeholder text paragraph above ux7 and ux2. Replace this with your actual project description or details.</p>
-      <div class="w3-half">
+    <div class="w3-margin-bottom">
+      <p>Placeholder text paragraph above ux7 and ux2. Replace this with your actual project description or details.</p>
+      <div class="ux-image-row">
         <img src="images/ux7.png" alt="UX Project 7">
-      </div>
-      <div class="w3-half">
         <img src="images/ux2.png" alt="UX Project 2">
       </div>
     </div>
 
-    <!-- Row 2: ux3 & ux4 (Side by side as they currently are) -->
-    <div class="w3-row-padding w3-margin-bottom">
-      <div class="w3-half">
+    <!-- Row 2: ux3 & ux4 -->
+    <div class="w3-margin-bottom">
+      <div class="ux-image-row">
         <img src="images/ux3.png" alt="UX Project 3">
-      </div>
-      <div class="w3-half">
         <img src="images/ux4.png" alt="UX Project 4">
       </div>
     </div>
 
     <!-- Row 3: ux8 & ux9 -->
-    <div class="w3-row-padding w3-margin-bottom">
-      <p style="padding: 0 8px;">Placeholder text paragraph above ux8 and ux9. Replace this with your actual project description or details.</p>
-      <div class="w3-half">
+    <div class="w3-margin-bottom">
+      <p>Placeholder text paragraph above ux8 and ux9. Replace this with your actual project description or details.</p>
+      <div class="ux-image-row">
         <img src="images/ux8.png" alt="UX Project 8">
-      </div>
-      <div class="w3-half">
         <img src="images/ux9.png" alt="UX Project 9">
       </div>
     </div>
