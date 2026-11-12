@@ -25,18 +25,19 @@
       display: none;
     }
 
-    /* Active Button Styling */
-    /* Bold UX button when #ux is targeted */
+    /* Active Button Styling (No bolding, just background color) */
+    
+    /* Darker grey background for UX when #ux is targeted */
     #ux:target ~ .w3-bar .btn-ux {
-      font-weight: bold;
-      background-color: #ddd !important;
+      background-color: #ccc !important;
+      color: #000 !important;
     }
 
-    /* Bold Art button when #art OR #home is targeted (default) */
+    /* Darker grey background for Art when #art OR #home is targeted (default) */
     #home:target ~ .w3-bar .btn-art,
     #art:target ~ .w3-bar .btn-art {
-      font-weight: bold;
-      background-color: #ddd !important;
+      background-color: #ccc !important;
+      color: #000 !important;
     }
 
     /* Gallery Grid Styles */
@@ -65,11 +66,11 @@
 
   <!-- Navigation Bar -->
   <div class="w3-bar w3-light-grey">
-    <a class="w3-bar-item w3-margin">Lilya Portfolio</a>
+    <a class="w3-bar-item w3-margin" style="padding: 8px 16px;">Lilya Portfolio</a>
     
-    <!-- The Art button now links to #home instead of #art so it resets correctly -->
-    <a href="#home" class="w3-bar-item w3-margin w3-right w3-button btn-art">Art</a>
-    <a href="#ux"   class="w3-bar-item w3-margin w3-right w3-button btn-ux">UX</a>
+    <!-- Both buttons pushed to the right. Art is first (left), UX is second (right). -->
+    <a href="#home" class="w3-bar-item w3-right w3-margin w3-button btn-art">Art</a>
+    <a href="#ux" class="w3-bar-item w3-right w3-margin w3-button btn-ux">UX</a>
   </div>
 
   <!-- UX Page -->
