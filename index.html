@@ -12,16 +12,8 @@
       display: none;
     }
 
-    /* Show UX by default */
-    .page-ux {
-      display: block;
-    }
-
-    /* #art targeted: hide UX, show Art */
-    #art:target ~ .page-ux {
-      display: none;
-    }
-    #art:target ~ .page-art {
+    /* Show Art by default */
+    .page-art {
       display: block;
     }
 
@@ -33,19 +25,32 @@
       display: none;
     }
 
+    /* Active Button Styling */
+    /* Bold UX button when #ux is targeted */
+    #ux:target ~ .w3-bar .btn-ux {
+      font-weight: bold;
+      background-color: #ddd !important;
+    }
+
+    /* Bold Art button when #art OR #home is targeted (default) */
+    #home:target ~ .w3-bar .btn-art,
+    #art:target ~ .w3-bar .btn-art {
+      font-weight: bold;
+      background-color: #ddd !important;
+    }
+
     /* Gallery Grid Styles */
     .image-grid {
       display: grid;
-      /* Creates responsive columns that are at least 300px wide */
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 4px; /* Spacing between images */
+      gap: 4px;
       padding: 4px;
     }
 
     .image-grid img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Prevents stretching */
+      object-fit: cover;
       display: block;
     }
   </style>
@@ -53,15 +58,18 @@
 
 <body>
 
-  <!-- Toggle targets (must come before the pages) -->
+  <!-- Toggle targets -->
+  <span id="home"></span>
   <span id="ux"></span>
   <span id="art"></span>
 
   <!-- Navigation Bar -->
   <div class="w3-bar w3-light-grey">
     <a class="w3-bar-item w3-margin">Lilya Portfolio</a>
-    <a href="#ux"  class="w3-bar-item w3-margin w3-right w3-button">UX</a>
-    <a href="#art" class="w3-bar-item w3-margin w3-right w3-button">Art</a>
+    
+    <!-- The Art button now links to #home instead of #art so it resets correctly -->
+    <a href="#home" class="w3-bar-item w3-margin w3-right w3-button btn-art">Art</a>
+    <a href="#ux"   class="w3-bar-item w3-margin w3-right w3-button btn-ux">UX</a>
   </div>
 
   <!-- UX Page -->
