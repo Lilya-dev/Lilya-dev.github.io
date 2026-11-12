@@ -5,7 +5,7 @@
   <title>Lilya Portfolio</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   
-  <!-- Favicon Link (Updated to images folder) -->
+  <!-- Favicon Link -->
   <link rel="icon" type="image/png" href="images/favicon.png">
   
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
@@ -41,12 +41,13 @@
       color: #000 !important;
     }
 
-    /* --- Header Scaling --- */
+    /* --- Header Alignment --- */
     .responsive-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: clamp(16px, 2vw, 32px) !important; 
+      /* Very tight edge padding (approx 4px) */
+      padding: 4px 8px !important; 
     }
 
     .responsive-text {
@@ -57,13 +58,15 @@
 
     .responsive-button {
       font-size: clamp(16px, 1.5vw, 28px) !important;
+      /* Buttons keep internal padding so they look like clickable buttons */
       padding: clamp(8px, 1vw, 16px) clamp(16px, 1.5vw, 32px) !important;
     }
 
     .header-buttons {
       display: flex;
-      gap: clamp(8px, 1vw, 16px);
+      gap: 8px;
     }
+    /* ----------------------- */
 
     /* --- Art Gallery Grid --- */
     .image-grid {
@@ -73,7 +76,6 @@
       padding: 4px;
     }
 
-    /* Wrapper for each Art image + text */
     .art-item {
       display: flex;
       flex-direction: column;
@@ -90,9 +92,9 @@
     .caption {
       font-size: 12px;
       color: #888; /* Light grey */
-      text-align: right; /* Anchored right */
+      text-align: left; /* Anchored to the left */
       margin: 4px 0 0 0; /* Minimal padding above */
-      padding: 0 4px 4px 0; /* slight right padding so it aligns neatly */
+      padding: 0 0 0 4px; /* Small left padding so it doesn't hug the edge too tightly */
     }
 
     /* --- UX Page specific styles --- */
@@ -105,8 +107,8 @@
     /* Container for the text above the images */
     .ux-text-header {
       max-width: 800px;
-      margin: 0 auto 8px auto; /* Centers container, minimal bottom margin */
-      text-align: right; /* Anchors text to the right */
+      margin: 0 auto 8px auto; 
+      text-align: right; 
     }
 
     .ux-image-row {
@@ -120,7 +122,6 @@
 
     .ux-image-container {
       width: 50%;
-      /* Changed to 16:9 for flat rectangles prioritizing horizontal info */
       aspect-ratio: 16 / 9; 
       display: flex;
       flex-direction: column;
@@ -157,7 +158,6 @@
     
     <!-- Row 1: ux7 & ux2 -->
     <div class="w3-margin-bottom">
-      <!-- Anchored right above the images -->
       <div class="ux-text-header">
         <p style="margin: 0;">Placeholder text paragraph above ux7 and ux2. Replace this with your actual project description or details.</p>
       </div>
