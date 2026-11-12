@@ -41,13 +41,27 @@
       color: #000 !important;
     }
 
-    /* --- Header Alignment --- */
-    .responsive-header {
+    /* --- Split Header Layout --- */
+    .split-header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      /* Very tight edge padding (approx 4px) */
+      align-items: center;
+      /* Tiny padding to keep it tight to the edges */
       padding: 4px 8px !important; 
+      width: 100%;
+    }
+
+    .header-left {
+      display: flex;
+      justify-content: flex-start; /* Aligns text to the left edge */
+      align-items: center;
+    }
+
+    .header-right {
+      display: flex;
+      justify-content: flex-end; /* Aligns buttons to the right edge */
+      align-items: center;
+      gap: 8px;
     }
 
     .responsive-text {
@@ -58,13 +72,7 @@
 
     .responsive-button {
       font-size: clamp(16px, 1.5vw, 28px) !important;
-      /* Buttons keep internal padding so they look like clickable buttons */
       padding: clamp(8px, 1vw, 16px) clamp(16px, 1.5vw, 32px) !important;
-    }
-
-    .header-buttons {
-      display: flex;
-      gap: 8px;
     }
     /* ----------------------- */
 
@@ -93,8 +101,8 @@
       font-size: 12px;
       color: #888; /* Light grey */
       text-align: left; /* Anchored to the left */
-      margin: 4px 0 0 0; /* Minimal padding above */
-      padding: 0 0 0 4px; /* Small left padding so it doesn't hug the edge too tightly */
+      margin: 4px 0 0 0; 
+      padding: 0 0 0 4px; 
     }
 
     /* --- UX Page specific styles --- */
@@ -104,7 +112,6 @@
       margin: 0 auto;
     }
     
-    /* Container for the text above the images */
     .ux-text-header {
       max-width: 800px;
       margin: 0 auto 8px auto; 
@@ -143,14 +150,20 @@
   <span id="ux"></span>
   <span id="art"></span>
 
-  <!-- Navigation Bar -->
-  <div class="w3-bar w3-light-grey responsive-header">
-    <a class="responsive-text">Lilya Portfolio</a>
+  <!-- Split Navigation Bar -->
+  <div class="w3-bar w3-light-grey split-header">
     
-    <div class="header-buttons">
+    <!-- Left Half -->
+    <div class="header-left">
+      <a class="responsive-text">Lilya Portfolio</a>
+    </div>
+    
+    <!-- Right Half -->
+    <div class="header-right">
       <a href="#home" class="w3-button btn-art responsive-button">Art</a>
       <a href="#ux" class="w3-button btn-ux responsive-button">UX</a>
     </div>
+
   </div>
 
   <!-- UX Page -->
