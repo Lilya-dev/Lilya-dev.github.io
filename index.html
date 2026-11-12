@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <title>Lilya Portfolio</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  <!-- Favicon Link -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 
   <style>
@@ -42,18 +46,25 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      /* Scales padding: min 16px, max 48px based on viewport */
-      padding: clamp(16px, 2vw, 48px) !important; 
+      /* Padding is now symmetrical (same on top/bottom as left/right) */
+      padding: clamp(16px, 2vw, 32px) !important; 
     }
 
     .responsive-text {
       font-size: clamp(18px, 1.5vw, 28px) !important;
+      margin: 0;
+      padding: 0;
     }
 
     .responsive-button {
       font-size: clamp(16px, 1.5vw, 28px) !important;
       padding: clamp(8px, 1vw, 16px) clamp(16px, 1.5vw, 32px) !important;
-      margin-left: clamp(8px, 1vw, 16px) !important; /* Space between buttons */
+    }
+
+    /* Spacing between the Art and UX buttons */
+    .header-buttons {
+      display: flex;
+      gap: clamp(8px, 1vw, 16px);
     }
     /* ----------------------- */
 
@@ -75,7 +86,6 @@
     /* UX Page specific styles */
     .ux-block {
       padding: clamp(16px, 2vw, 48px);
-      /* Centers the UX content on large screens so it doesn't span edge-to-edge */
       max-width: 1200px; 
       margin: 0 auto;
     }
@@ -84,7 +94,6 @@
       display: flex;
       gap: 8px;
       margin-bottom: 24px;
-      /* Caps the max width of the images on desktop so they don't hog space */
       max-width: 800px; 
       margin-left: auto;
       margin-right: auto;
@@ -114,13 +123,14 @@
   <!-- Navigation Bar -->
   <div class="w3-bar w3-light-grey responsive-header">
     
-    <!-- Brand name (Left side) -->
-    <a class="responsive-text" style="padding: 0; margin: 0;">Lilya Portfolio</a>
+    <!-- Brand name (Left) -->
+    <a class="responsive-text">Lilya Portfolio</a>
     
-    <!-- Buttons (Right side) -->
-    <div>
-      <a href="#ux" class="w3-button btn-ux responsive-button">UX</a>
+    <!-- Buttons (Right, Art then UX) -->
+    <div class="header-buttons">
+      <!-- Note: href points to #home so Art acts as the default state -->
       <a href="#home" class="w3-button btn-art responsive-button">Art</a>
+      <a href="#ux" class="w3-button btn-ux responsive-button">UX</a>
     </div>
     
   </div>
@@ -164,7 +174,6 @@
       <img src="images/art03.jpg" alt="Art Piece 3">
       <img src="images/art04.jpg" alt="Art Piece 4">
       <img src="images/art05.png" alt="Art Piece 5">
-      <!-- art06 omitted -->
       <img src="images/art07.jpg" alt="Art Piece 7">
       <img src="images/art08.jpg" alt="Art Piece 8">
       <img src="images/art09.jpg" alt="Art Piece 9">
@@ -177,7 +186,6 @@
       <img src="images/art16.png" alt="Art Piece 16">
       <img src="images/art17.png" alt="Art Piece 17">
       <img src="images/art18.jpg" alt="Art Piece 18">
-      <!-- art19 omitted -->
       <img src="images/art20.jpg" alt="Art Piece 20">
     </div>
   </div>
