@@ -1,29 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<title>Lilya Portfolio</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css"> 
-  
-<style>
-</style>
-  
-<script src="">
-</script>
+<head>
+  <meta charset="UTF-8">
+  <title>Lilya Portfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+
+  <style>
+    /* Hide both pages by default */
+    .page {
+      display: none;
+    }
+
+    /* When the #ux or #art target is active, show the matching page */
+    #ux:target ~ .page-ux,
+    #art:target ~ .page-art {
+      display: block;
+    }
+
+    /* Default: show UX when nothing is targeted */
+    .page-ux {
+      display: block;
+    }
+    #art:target ~ .page-ux {
+      display: none;
+    }
+
+    /* Highlight the active nav button */
+    .nav-art:target ~ .w3-bar .nav-link[href="#art"],
+    .nav-ux:target ~ .w3-bar .nav-link[href="#ux"] {
+      background-color: #ccc;
+    }
+  </style>
+</head>
 
 <body>
 
-<div class="w3-bar w3-light-grey">
-  <a class="w3-bar-item w3-margin">Lilya Portfolio</a>
-  <a href="#ux" class="w3-bar-item w3-margin w3-right w3-button">UX</a>
-  <a href="#art" class="w3-bar-item w3-margin w3-right w3-button">Art</a>
-</div>
+  <!-- These empty anchors are the toggle targets -->
+  <span id="ux"></span>
+  <span id="art"></span>
 
-<div class="w3-bar">
-  <div class="w3-display-container">
-    <img src="portfolio_canvas.png" class="w3-image" alt="portfolio images">
+  <div class="w3-bar w3-light-grey">
+    <a class="w3-bar-item w3-margin">Lilya Portfolio</a>
+    <a href="#ux" class="w3-bar-item w3-margin w3-right w3-button nav-link">UX</a>
+    <a href="#art" class="w3-bar-item w3-margin w3-right w3-button nav-link">Art</a>
   </div>
-</div>
+
+  <!-- UX page -->
+  <div class="page page-ux">
+    <div class="w3-bar">
+      <div class="w3-display-container">
+        <img src="portfolio_canvas.png" class="w3-image" alt="UX portfolio images">
+      </div>
+    </div>
+  </div>
+
+  <!-- Art page -->
+  <div class="page page-art">
+    <div class="w3-bar">
+      <div class="w3-display-container">
+        <img src="art_canvas.png" class="w3-image" alt="Art portfolio images">
+      </div>
+    </div>
+  </div>
 
 </body>
-</html> 
+</html>
